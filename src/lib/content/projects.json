@@ -1,0 +1,120 @@
+[
+  {
+    "id": "shoprite-nigeria",
+    "name": "Shoprite Nigeria",
+    "description": "Retail Supermarkets Nigeria Limited, trading as Shoprite Nigeria, is a leading supermarket chain formerly owned by Shoprite Holdings Limited (SHL).",
+    "metric": "Retail Infrastructure",
+    "stack": ["PHP", "Next.js", "PostgreSQL"],
+    "problem": "Modernizing the digital footprint for Nigeria's largest supermarket chain.",
+    "tradeoffs": ["Next.js for performance", "PHP for legacy integration"],
+    "decisions": ["Headless approach", "Cloudflare edge caching"],
+    "outcomes": ["Scaled to millions of users", "Seamless digital transition"],
+    "link": "https://shoprite.ng/"
+  },
+  {
+    "id": "sdsd-prestige",
+    "name": "SDSD Prestige",
+    "description": "Shipbroking and chartering platform featuring a charter party editor with over 100 forms and collaborative email software.",
+    "metric": "Maritime Tech",
+    "stack": ["Python", "Django", "React"],
+    "problem": "Managing complex maritime contracts and high-volume communication for shipping professionals.",
+    "tradeoffs": ["Django for security", "React for interactive editors"],
+    "decisions": ["Custom editor building", "Unified team inbox"],
+    "outcomes": ["Streamlined broker workflows", "100+ forms automated"],
+    "link": "https://sdsd.com/"
+  },
+  {
+    "id": "fincode",
+    "name": "Fincode",
+    "description": "Infrastructure for money businesses in Africa, offering simple, fair, and inclusive financial products for everyday customers.",
+    "metric": "Fintech Core",
+    "stack": ["TypeScript", "FastAPI", "Supabase"],
+    "problem": "Lack of unified financial infrastructure for emerging African money businesses.",
+    "tradeoffs": ["Supabase for rapid scaling", "FastAPI for transaction logic"],
+    "decisions": ["Inclusive UX design", "Multi-currency support"],
+    "outcomes": ["Empowered local businesses", "High-volume transaction success"],
+    "link": "https://fincode.co.uk/"
+  },
+  {
+    "id": "songhai-exchange",
+    "name": "Songhai Exchange",
+    "description": "Direct connection to thousands of payment partners globally, facilitating lightning-fast payments through a single integration.",
+    "metric": "Payment Gateway",
+    "stack": ["Python", "Redis", "Docker"],
+    "problem": "Fragmented payment landscapes causing slow cross-border transactions.",
+    "tradeoffs": ["Redis for speed", "Python for partner integrations"],
+    "decisions": ["Single-API architecture", "Lightning-fast routing"],
+    "outcomes": ["Global partner reach", "Instant payment resolution"],
+    "link": "https://songhaiexchange.com/"
+  },
+  {
+    "id": "pearlsend-apartment",
+    "name": "Pearlsend Apartment",
+    "description": "Individually-themed luxury suites management system, focusing on comfort, curation, and unique storytelling.",
+    "metric": "Luxury Hospitality",
+    "stack": ["React", "Framer Motion", "Tailwind"],
+    "problem": "Digitizing a high-end curated living experience without losing the personal touch.",
+    "tradeoffs": ["Framer Motion for visual stories", "Tailwind for rapid UI"],
+    "decisions": ["Theme-based navigation", "Curation-first content"],
+    "outcomes": ["Increased luxury engagement", "Reflected physical comfort online"],
+    "link": "https://pearlsend.apartments/"
+  },
+  {
+    "id": "codebit-academy",
+    "name": "Codebit Academy",
+    "description": "Coding education platform with an exclusive internship engine connecting students to top-tier corporate partners.",
+    "metric": "Ed-Tech & Jobs",
+    "stack": ["Django", "PostgreSQL", "AWS"],
+    "problem": "The gap between learning to code and securing high-quality industry roles.",
+    "tradeoffs": ["Django for management logic", "AWS for content delivery"],
+    "decisions": ["Internship matching engine", "Structured curriculum"],
+    "outcomes": ["Direct career paths for students", "High graduate placement"],
+    "link": "https://codebitacademy.com/"
+  },
+  {
+    "id": "sohcahtoa-innovative",
+    "name": "Sohcahtoa Innovative",
+    "description": "Expert solutions for BAME-owned businesses, providing financial, development, and design tools to overcome challenges.",
+    "metric": "Social Impact",
+    "stack": ["Next.js", "Supabase", "Tailwind"],
+    "problem": "Under-served BAME businesses needing high-quality technical and financial solutions.",
+    "tradeoffs": ["Next.js for accessibility", "Supabase for real-time support"],
+    "decisions": ["BAME-centric toolset", "Expert-led consultations"],
+    "outcomes": ["Empowered hundreds of businesses", "Proven social impact"],
+    "link": "https://sohcahtoa.co.uk/"
+  },
+  {
+    "id": "capital-express-assurance",
+    "name": "Capital Express Assurance",
+    "description": "Comprehensive insurance policies and management system for individuals, families, government, and businesses.",
+    "metric": "InsurTech",
+    "stack": ["PHP", "Laravel", "MySQL"],
+    "problem": "Managing diverse insurance products across multiple demographics efficiently.",
+    "tradeoffs": ["Laravel for robustness", "MySQL for data integrity"],
+    "decisions": ["Multi-tier policy management", "Customer-centric portal"],
+    "outcomes": ["Streamlined policy issuance", "Expanded digital reach"],
+    "link": "https://capitalexpressassurance.com/"
+  },
+  {
+    "id": "ai-crm-automator",
+    "name": "AI CRM Automator",
+    "description": "Custom CRM integration and workflow automation for sales-driven organizations using Landbot and SendPulse.",
+    "metric": "85% Auto-Lead Sync",
+    "stack": ["Landbot", "SendPulse", "Python", "Zapier"],
+    "problem": "Manual lead entry was causing significant delays and data loss in the sales pipeline.",
+    "tradeoffs": ["Zapier for rapid connecting", "Python for custom logic processing"],
+    "decisions": ["Automated lead scoring", "Multi-channel notification system"],
+    "outcomes": ["Sales response time improved by 4x", "Lead conversion rate increased by 20%"]
+  },
+  {
+    "id": "member-portal-engine",
+    "name": "Member Portal Engine",
+    "description": "Enterprise-grade WordPress membership portal for secure content delivery and community management.",
+    "metric": "10k+ Active Members",
+    "stack": ["Wordpress", "PHP", "Squarespace", "Wati"],
+    "problem": "Scaling a community platform while maintaining secure access to premium content.",
+    "tradeoffs": ["Wordpress for content flexibility", "Wati for automated WhatsApp support"],
+    "decisions": ["Custom membership logic", "Automated renewal notifications"],
+    "outcomes": ["Community growth exceeded 300% in 1 year", "Support tickets reduced by 50%"]
+  }
+]

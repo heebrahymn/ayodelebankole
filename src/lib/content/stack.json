@@ -1,0 +1,8 @@
+{
+  "languages": ["Python", "TypeScript", "PHP"],
+  "frameworks": ["Django", "FastAPI", "Next.js", "React", "TanStack Start", "Wordpress"],
+  "data": ["PostgreSQL", "Supabase", "Redis"],
+  "infra": ["Docker", "Cloudflare", "Git"],
+  "ui": ["Tailwind", "Shadcn UI", "Framer Motion", "Figma"],
+  "others": ["Squarespace", "Landbot", "Freshchat", "Wati", "SendPulse"]
+}
