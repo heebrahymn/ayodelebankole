@@ -12,8 +12,9 @@ export function ContactSection() {
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
 
+    const formId = import.meta.env.VITE_FORMSPREE_ID || "xaqvzqrz";
     try {
-      const response = await fetch("https://formspree.io/f/xaqvzqrz", {
+      const response = await fetch(`https://formspree.io/f/${formId}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
