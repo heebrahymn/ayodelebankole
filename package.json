@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "rm -rf dist && vite build && cp -r dist/server/. dist/client/ && (mv dist/client/server.js dist/client/_worker.js || mv dist/client/index.js dist/client/_worker.js) && rm -rf dist/server",
+    "build": "rm -rf dist && vite build && cp -r dist/server/. dist/client/ && (mv dist/client/server.js dist/client/_worker.js || mv dist/client/index.js dist/client/_worker.js)",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
