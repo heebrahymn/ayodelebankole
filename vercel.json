@@ -1,8 +1,13 @@
 {
+  "functions": {
+    "api/server.js": {
+      "includeFiles": "dist/server/**"
+    }
+  },
   "rewrites": [
     {
-      "source": "/(assets/.*)",
-      "destination": "/dist/client/$1"
+      "source": "/assets/(.*)",
+      "destination": "/dist/client/assets/$1"
     },
     {
       "source": "/(.*)",
