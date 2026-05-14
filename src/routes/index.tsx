@@ -27,7 +27,6 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const [open, setOpen] = useState<Project | null>(null);
-  const [a, b] = projects as Project[];
 
   return (
     <main className="relative min-h-screen overflow-hidden">

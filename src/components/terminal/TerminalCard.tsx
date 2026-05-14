@@ -90,11 +90,8 @@ export function TerminalCard() {
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-
-
   useEffect(() => {
     if (!isMobile || mobileOpen) run("projects");
-
   }, [isMobile, mobileOpen]);
 
   if (isMobile && !mobileOpen) {
@@ -140,7 +137,14 @@ export function TerminalCard() {
           <span className="h-3 w-3 rounded-full bg-[#28c840]" />
         </div>
         <div className="font-mono text-xs text-muted-foreground">api.ayodele.bankole</div>
-        <div className="w-12" />
+        <button
+          onClick={copyCurl}
+          className="flex items-center gap-1.5 rounded-md border border-white/10 bg-white/5 px-2 py-1 font-mono text-[10px] text-muted-foreground transition hover:bg-white/10 hover:text-foreground"
+          title="Copy cURL command"
+        >
+          {copied ? <Check className="h-3 w-3 text-emerald-400" /> : <Copy className="h-3 w-3" />}
+          {copied ? "copied" : "curl"}
+        </button>
       </div>
 
       {/* pills */}

@@ -37,7 +37,6 @@ export function HeroCard() {
           >
             Hi I'm Ayodele Bankole 👋
           </motion.span>
-
         </span>
         I build <span className="gradient-text tracking-tighter">full-stack products</span> that
         ship.
