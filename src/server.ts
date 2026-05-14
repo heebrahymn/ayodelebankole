@@ -71,12 +71,14 @@ export default {
     const url = new URL(request.url);
 
     // Serve static assets from Cloudflare Pages
-    if (url.pathname.startsWith("/assets/") || url.pathname.includes(".")) {
+    // We check for anything with a dot (files) or in the assets folder
+    // But we EXCLUDE the root path so SSR handles the main page
+    if (url.pathname !== "/" && (url.pathname.includes(".") || url.pathname.startsWith("/assets/"))) {
       try {
         const assetResponse = await env.ASSETS.fetch(request);
-        if (assetResponse.ok) return assetResponse;
+        if (assetResponse.status !== 404) return assetResponse;
       } catch (e) {
-        // Fallback to handler
+        // Fallback to SSR handler if asset fetch fails
       }
     }
 
@@ -90,6 +92,7 @@ export default {
     }
   },
 };
+
 
 
 
