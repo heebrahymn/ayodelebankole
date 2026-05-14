@@ -90,12 +90,7 @@ export function TerminalCard() {
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll to bottom as text types
-  useEffect(() => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollTop = scrollContainerRef.current.scrollHeight;
-    }
-  }, [body]);
+
 
   useEffect(() => {
     if (!isMobile || mobileOpen) run("projects");

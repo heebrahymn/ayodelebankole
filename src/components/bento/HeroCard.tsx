@@ -32,11 +32,12 @@ export function HeroCard() {
           <motion.span
             initial={{ width: 0 }}
             animate={{ width: "auto" }}
-            transition={{ duration: 2, ease: "easeInOut", delay: 0.2 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="overflow-hidden whitespace-nowrap border-r-2 border-violet-500 pr-1 animate-pulse-cursor"
           >
             Hi I'm Ayodele Bankole 👋
           </motion.span>
+
         </span>
         I build <span className="gradient-text tracking-tighter">full-stack products</span> that
         ship.
