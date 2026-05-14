@@ -67,7 +67,19 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
 }
 
 export default {
-  async fetch(request: Request, env: unknown, ctx: unknown) {
+  async fetch(request: Request, env: any, ctx: unknown) {
+    const url = new URL(request.url);
+
+    // Serve static assets from Cloudflare Pages
+    if (url.pathname.startsWith("/assets/") || url.pathname.includes(".")) {
+      try {
+        const assetResponse = await env.ASSETS.fetch(request);
+        if (assetResponse.ok) return assetResponse;
+      } catch (e) {
+        // Fallback to handler
+      }
+    }
+
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
@@ -78,5 +90,6 @@ export default {
     }
   },
 };
+
 
 
