@@ -66,15 +66,22 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
   return brandedErrorResponse();
 }
 
+async function handler(request: Request, env: unknown, ctx: unknown) {
+  try {
+    const handlerEntry = await getServerEntry();
+    const response = await handlerEntry.fetch(request, env, ctx);
+    return await normalizeCatastrophicSsrResponse(response);
+  } catch (error) {
+    console.error(error);
+    return brandedErrorResponse();
+  }
+}
+
+// For Cloudflare Workers
 export default {
-  async fetch(request: Request, env: unknown, ctx: unknown) {
-    try {
-      const handler = await getServerEntry();
-      const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
-    } catch (error) {
-      console.error(error);
-      return brandedErrorResponse();
-    }
-  },
+  fetch: handler,
 };
+
+// For Vercel Edge Functions
+export { handler as fetch };
+
