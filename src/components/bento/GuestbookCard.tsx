@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Send, Loader2 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { formatDistanceToNow } from "date-fns";
+import { toast } from "sonner";
 
 type Note = {
   id: string;
@@ -23,6 +24,7 @@ export function GuestbookCard() {
 
   useEffect(() => {
     if (!supabase) {
+      console.warn("Guestbook: Supabase client not initialized. Check environment variables.");
       setLoading(false);
       return;
     }
@@ -65,7 +67,12 @@ export function GuestbookCard() {
 
   async function send(e: React.FormEvent) {
     e.preventDefault();
-    if (!msg.trim() || sending || !supabase) return;
+    if (!msg.trim() || sending) return;
+
+    if (!supabase) {
+      toast.error("Guestbook is currently offline (Configuration missing)");
+      return;
+    }
 
     setSending(true);
     const newNote = {
@@ -79,9 +86,10 @@ export function GuestbookCard() {
       if (error) throw error;
       
       setMsg("");
-      // Real-time subscription will handle updating the list
-    } catch (err) {
+      toast.success("Note left successfully!");
+    } catch (err: any) {
       console.error("Error sending note:", err);
+      toast.error(err.message || "Failed to send note. Check console for details.");
     } finally {
       setSending(false);
     }

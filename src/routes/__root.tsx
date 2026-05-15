@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 
 import { MouseFollower } from "@/components/effects/MouseFollower";
+import { Toaster } from "sonner";
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -116,6 +117,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <MouseFollower />
       <Outlet />
+      <Toaster position="top-right" theme="dark" richColors />
     </QueryClientProvider>
   );
 }
