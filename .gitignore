@@ -34,3 +34,4 @@ dist-ssr
 
 .gemini/
 gha-creds-*.json
+.env
