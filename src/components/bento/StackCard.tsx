@@ -10,10 +10,10 @@ const SLUG_OVERRIDES: Record<string, string> = {
   Wordpress: "wordpress",
   PostgreSQL: "postgresql",
   Tailwind: "tailwindcss",
-  Landbot: "https://api.iconify.design/logos:landbot.svg",
-  Freshchat: "https://api.iconify.design/logos:freshchat.svg",
+  Landbot: "https://cdn.brandfetch.io/id8Wf4H7u4/idvR6e17_Z.svg",
+  Freshchat: "https://cdn.brandfetch.io/id-T3_n_Yv/idYv7C7C6b.svg",
   Wati: "whatsapp",
-  SendPulse: "https://api.iconify.design/logos:sendpulse-icon.svg",
+  SendPulse: "https://cdn.brandfetch.io/id_r0G5Lp6/idG5p6Lp6Y.svg",
 };
 
 const items: { label: string; slug: string; abbr: string }[] = [
@@ -42,7 +42,10 @@ function IconWithFallback({ i }: { i: { label: string; slug: string; abbr: strin
           src={src}
           alt=""
           className="h-full w-full object-contain"
-          onError={() => setError(true)}
+          onError={() => {
+            console.error(`Failed to load icon for ${i.label}: ${src}`);
+            setError(true);
+          }}
         />
       )}
     </div>
