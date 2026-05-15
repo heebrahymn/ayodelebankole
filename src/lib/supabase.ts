@@ -3,8 +3,11 @@ import { createClient } from '@supabase/supabase-js'
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  console.warn('Supabase URL or Anon Key is missing. Check your .env file.')
-}
+// Create a dummy client or null if keys are missing to prevent top-level crash
+export const supabase = (supabaseUrl && supabaseAnonKey) 
+  ? createClient(supabaseUrl, supabaseAnonKey)
+  : null as unknown as ReturnType<typeof createClient>
 
-export const supabase = createClient(supabaseUrl || '', supabaseAnonKey || '')
+if (!supabase) {
+  console.warn('Supabase credentials missing. Guestbook will not function.')
+}

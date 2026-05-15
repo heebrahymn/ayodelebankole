@@ -22,6 +22,10 @@ export function GuestbookCard() {
   const [sending, setSending] = useState(false);
 
   useEffect(() => {
+    if (!supabase) {
+      setLoading(false);
+      return;
+    }
     fetchNotes();
 
     // Subscribe to real-time changes
@@ -42,6 +46,7 @@ export function GuestbookCard() {
   }, []);
 
   async function fetchNotes() {
+    if (!supabase) return;
     try {
       const { data, error } = await supabase
         .from("guestbook")
@@ -60,7 +65,7 @@ export function GuestbookCard() {
 
   async function send(e: React.FormEvent) {
     e.preventDefault();
-    if (!msg.trim() || sending) return;
+    if (!msg.trim() || sending || !supabase) return;
 
     setSending(true);
     const newNote = {
