@@ -10,10 +10,10 @@ const SLUG_OVERRIDES: Record<string, string> = {
   Wordpress: "wordpress",
   PostgreSQL: "postgresql",
   Tailwind: "tailwindcss",
-  Landbot: "landbot",
-  Freshchat: "freshchat",
+  Landbot: "https://api.iconify.design/logos:landbot.svg",
+  Freshchat: "https://api.iconify.design/logos:freshchat.svg",
   Wati: "whatsapp",
-  SendPulse: "sendpulse",
+  SendPulse: "https://api.iconify.design/logos:sendpulse-icon.svg",
 };
 
 const items: { label: string; slug: string; abbr: string }[] = [
@@ -31,6 +31,7 @@ const items: { label: string; slug: string; abbr: string }[] = [
 
 function IconWithFallback({ i }: { i: { label: string; slug: string; abbr: string } }) {
   const [error, setError] = useState(false);
+  const src = i.slug.startsWith("http") ? i.slug : `https://cdn.simpleicons.org/${i.slug}/white`;
 
   return (
     <div className="grid h-5 w-5 place-items-center rounded-full bg-white/10 p-1">
@@ -38,7 +39,7 @@ function IconWithFallback({ i }: { i: { label: string; slug: string; abbr: strin
         <span className="text-[8px] font-bold text-muted-foreground">{i.abbr}</span>
       ) : (
         <img
-          src={`https://cdn.simpleicons.org/${i.slug}/white`}
+          src={src}
           alt=""
           className="h-full w-full object-contain"
           onError={() => setError(true)}
