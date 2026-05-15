@@ -67,6 +67,7 @@ export function GuestbookCard() {
 
   async function send(e: React.FormEvent) {
     e.preventDefault();
+    console.log("Send button clicked!", { msg, hasSupabase: !!supabase });
     if (!msg.trim() || sending) return;
 
     if (!supabase) {
