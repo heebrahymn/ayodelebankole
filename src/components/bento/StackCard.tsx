@@ -10,10 +10,10 @@ const SLUG_OVERRIDES: Record<string, string> = {
   Wordpress: "wordpress",
   PostgreSQL: "postgresql",
   Tailwind: "tailwindcss",
-  Landbot: "botpress",
-  Freshchat: "freshworks",
+  Landbot: "landbot",
+  Freshchat: "freshchat",
   Wati: "whatsapp",
-  SendPulse: "maildotru",
+  SendPulse: "sendpulse",
 };
 
 const items: { label: string; slug: string; abbr: string }[] = [
